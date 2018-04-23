@@ -1,0 +1,33 @@
+page-login {
+    ion-content{
+        width: 80%;
+        margin:120px auto;
+        position: relative !important;
+        a{
+            margin: 0 auto;
+            display: inline-block;
+            position: relative;
+            width:48.5%;
+            text-align: center;
+            color:#ccc;
+            font-size: 11px;
+            &:hover{
+                color: rgb(185, 0, 0);
+            }
+        }
+        
+    }
+    ion-header {
+        position: relative !important
+    }
+    ion-img {
+        background: transparent;
+        display: block;
+        position: relative;
+        margin: 0 auto;
+    
+       
+
+    }
+    
+}

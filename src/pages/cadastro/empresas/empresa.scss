@@ -1,0 +1,23 @@
+page-empresa {
+    ion-header {
+        button {
+            float: right;
+        }
+        
+    }
+    .header-md {
+        background-image:none !important;
+    }
+    ion-content{ 
+        width: 80%;
+        margin:50px auto;
+        position: relative !important;
+        margin-top: 10px;
+        .title {
+            font-size: 24px;
+            
+        }
+       
+    }
+    
+}
