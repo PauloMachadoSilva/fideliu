@@ -16,6 +16,7 @@ import { androidConfig } from './../config/android.config';
 import { iosConfig } from './../config/ios.config';
 import { PaisesProvider } from './../providers/providers';
 import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 //import { Geolocation } from '@ionic-native/geolocation';
@@ -34,6 +35,7 @@ import { HttpModule } from '@angular/http';
   imports: [
     BrowserModule,
     HttpModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(MyApp, {
       platforms: {
           //Configurações de plataformas

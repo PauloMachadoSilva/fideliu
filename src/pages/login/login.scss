@@ -1,20 +1,48 @@
 page-login {
-    ion-content{
-        ion-item {
-            background-color: transparent !important;
-            padding-left: 0px !important;
-            .item-inner {
-                border-bottom:0 !important;
-                padding-right: 0px !important;
-            }
+    ion-content {
+        .div-input {
+            position: relative;
+        }
+        .div-form{
+            color: rgb(188, 0, 0);
+            font-weight: bold;
+            font-size: 12px;
+            z-index: 9999999;
+            position: relative;
+            height: 0px;
+            left: 15px;
+        }
             ion-label {
+                color: #f7f5f5 !important;
+                    position: absolute;
+                    left: 30px;
+                    margin: 20px auto !important;
+            }
+            ion-label{ 
+                &.form {
                 color:rgb(247, 245, 245) !important;
                 position: absolute;
-                bottom: 5px;
+                top: 35px;
                 left: 25px;
+                }
             }
-             
 
+            ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: rgba(255, 255, 255, 0.25) !important;
+                opacity: 1; /* Firefox */
+            } 
+
+        
+        ion-input{
+            height: 60px;
+            &.ng-invalid.ng-touched input {
+                border: 1px solid red !important;
+            }
+    
+            &.ng-valid.ng-touched input{
+                border: 1px solid #24d617!important;
+            }
+           
         }
         position: absolute;
         .text-input {
@@ -22,7 +50,7 @@ page-login {
             height: 40px;
             border-radius: 20px;
             background:  rgba(255, 255, 255, 0.25);
-            padding: 0px 50px !important;
+            padding: 0px 55px !important;
             color: #fff;
             width:calc(100% - 8px 8px)  !important;
         
@@ -58,28 +86,31 @@ page-login {
         .item-ios {
             border-top:0 !important;
         }
-        
-        
-    }
-    ion-header {
-        position: relative !important
-    }
-    ion-img {
-        background: transparent;
-        display: block;
-        position: relative;
-        margin: 0 auto;
-    
-       
 
-    }
-    .button{
-        margin: 10px auto;
-        border-radius: 20px;
-        height: 40px;
-        width:calc(100% - 8px - 8px)  !important;
         
-    } 
+        
+    }
+        ion-header {
+            position: relative !important
+        }
+        ion-img {
+            background: transparent;
+            display: block;
+            position: relative;
+            margin: 0 auto;
+        
+        
+
+        }
+        .button{
+            margin: 10px auto;
+            border-radius: 20px;
+            height: 40px;
+            width:calc(100% - 8px - 8px)  !important;
+            
+        }
+
+   
     
     
 }

@@ -1,31 +1,47 @@
+<form [formGroup]="formulario">   
 <ion-content>
     <div class="bg-fundo"></div>
-    <div class="bg-content">    
-        <ion-img width=200 height=80 src="assets/imgs/logo-fideliu.svg"></ion-img>
-        <ion-list>
+    <div class="bg-content" (ngSubmit)="efetuarLogin()"> 
         
-                <ion-item data-input="username">
+            <ion-img width=200 height=80 src="assets/imgs/logo-fideliu.svg"></ion-img>
+            <ion-list>
+                <div class="div-input">
                     <ion-label><i class="material-icons md-48">face</i></ion-label>
-                    <ion-input placeholder="Login" type="text" [(ngModel)]="username"></ion-input>
-                </ion-item>
-        
-                <ion-item data-input="password">
+                    <ion-input 
+                        placeholder="Informe seu e-mail" 
+                        type="text"
+                        formControlName="email">
+                    </ion-input>
+                </div>
+               
+                <div *ngIf="!formulario.get('email').valid && formulario.get('email').touched" class="div-form">Informe uma e-mail válido</div>>
+                <div class="div-input">
                     <ion-label ><i class="material-icons md-48">lock_outline</i></ion-label>
-                    <ion-input placeholder="Senha" type="tel" maxlength="6" [(ngModel)]="password"></ion-input>
-                </ion-item>
-        
+                    <ion-input 
+                        placeholder="Informe a sua senha" 
+                        type="tel" 
+                        maxlength="6"
+                        formControlName="senha">        
+                    </ion-input>
+                </div>
+                <div *ngIf="!formulario.get('senha').valid && formulario.get('senha').touched" class="div-form">Senha incorreta</div>>
                 <ion-item style="display: none">
-                    <ion-input type="hidden" [(ngModel)]="password"></ion-input>
+                    <ion-input type="hidden"></ion-input>
                 </ion-item>
-                <button ion-button  full (click)="login()" color="danger">
-                        <img src="assets/images/svg-loaders/oval.svg" *ngIf="isLoading" />
-                        <span *ngIf="!isLoading">ENTRAR</span>
-                    </button>
-        </ion-list>
-       
-        <div class="">
-            <a href="#" target="_blank">Ainda não sou cliente.</a>
-            <a href="#" target="_blank">Esqueci login/senha</a>
-        </div>
+                <button ion-button [disabled]="!formulario.valid"  full (click)="efetuarLogin()" color="danger">
+                    <img src="assets/images/svg-loaders/oval.svg" *ngIf="isLoading" />
+                    <span *ngIf="!isLoading">Efetuar Login</span>
+                </button>
+                <button ion-button  full color="primary">
+                    <img src="assets/images/svg-loaders/oval.svg" *ngIf="isLoading" />
+                    <span *ngIf="!isLoading">Logar com o Facebook</span>
+                </button>
+            </ion-list>
+        
+            <div class="">
+                <a href="#" target="_blank">Ainda não sou cliente.</a>
+                <a href="#" target="_blank">Esqueci login/senha</a>
+            </div>
     </div>
 </ion-content>
+</form>

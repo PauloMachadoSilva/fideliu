@@ -10,51 +10,51 @@ declare var google;
     templateUrl: 'context-menu.html'
 })
 export class ContextMenu{
-    @ViewChild(Nav) nav: Nav
-    pages: [{title: string, component: any}]
-    mapa: any;
+    // @ViewChild(Nav) nav: Nav
+    // pages: [{title: string, component: any}]
+    // mapa: any;
     
    
   constructor(
     public navCtrl: NavController
   ) {
-   //Array de páginas
-    this.pages = [
+//    //Array de páginas
+//     this.pages = [
        
-       { title: 'Cadastrar Empresa',component: EmpresaPage}, 
-       { title: 'Cadastrar Usuarios',component: UsuarioPage},
-       { title: 'Sair da sua conta',component: LoginPage},       
+//        { title: 'Cadastrar Empresa',component: EmpresaPage}, 
+//        { title: 'Cadastrar Usuarios',component: UsuarioPage},
+//        { title: 'Sair da sua conta',component: LoginPage},       
        
-       
-    ];
+//     ];
     
 
-  }
- openPage(page: {title: string, component:any }):void{
-    //Empilhar views
-    //this.navCtrl.push(page.component);
-    //Emviar para uma nova página
-    this.navCtrl.push(page.component);
+//   }
+//  openPage(page: {title: string, component:any }):void{
+//     //Empilhar views
+//     //this.navCtrl.push(page.component);
+//     //Emviar para uma nova página
+//     this.navCtrl.push(page.component);
     
- }
- adicionaMarcador(){
+//  }
+//  adicionaMarcador(){
   
-     let marcador = new google.maps.Marker({
-       map: this.mapa,
-       animation: google.maps.Animation.DROP,
-       position: this.mapa.getCenter()
-     });
+//      let marcador = new google.maps.Marker({
+//        map: this.mapa,
+//        animation: google.maps.Animation.DROP,
+//        position: this.mapa.getCenter()
+//      });
   
-     let conteudo = "<h4>The Club!</h4>";          
+//      let conteudo = "<h4>The Club!</h4>";          
   
-     let infoWindow = new google.maps.InfoWindow({
-       content: conteudo
-     });
+//      let infoWindow = new google.maps.InfoWindow({
+//        content: conteudo
+//      });
   
-     google.maps.event.addListener(marcador, 'click', () => {
-       infoWindow.open(this.mapa, marcador);
-     });
+//      google.maps.event.addListener(marcador, 'click', () => {
+//        infoWindow.open(this.mapa, marcador);
+//      });
   
-   }
+//    }
+}
 }
     
