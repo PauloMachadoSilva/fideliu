@@ -1,28 +1,31 @@
 <ion-content>
+    <div class="bg-fundo"></div>
+    <div class="bg-content">    
         <ion-img width=200 height=80 src="assets/imgs/logo-fideliu.svg"></ion-img>
-    <ion-list>
-    
-            <ion-item data-input="username">
-                <ion-label floating>Usuário</ion-label>
-                <ion-input type="text" [(ngModel)]="username"></ion-input>
-            </ion-item>
-    
-            <ion-item data-input="password">
-                <ion-label floating>Senha</ion-label>
-                <ion-input type="tel" maxlength="6" style="-webkit-text-security:disc" [(ngModel)]="password"></ion-input>
-            </ion-item>
-    
-            <ion-item style="display: none">
-                <ion-input type="hidden" [(ngModel)]="password"></ion-input>
-            </ion-item>
-    
-    </ion-list>
-    <button ion-button  full (click)="login()" color="danger">
-        <img src="assets/images/svg-loaders/oval.svg" *ngIf="isLoading" />
-        <span *ngIf="!isLoading">ENTRAR</span>
-    </button>
-    <div class="">
-        <a href="#" target="_blank">Ainda não sou cliente.</a>
-        <a href="#" target="_blank">Esqueci login/senha</a>
+        <ion-list>
+        
+                <ion-item data-input="username">
+                    <ion-label><i class="material-icons md-48">face</i></ion-label>
+                    <ion-input placeholder="Login" type="text" [(ngModel)]="username"></ion-input>
+                </ion-item>
+        
+                <ion-item data-input="password">
+                    <ion-label ><i class="material-icons md-48">lock_outline</i></ion-label>
+                    <ion-input placeholder="Senha" type="tel" maxlength="6" [(ngModel)]="password"></ion-input>
+                </ion-item>
+        
+                <ion-item style="display: none">
+                    <ion-input type="hidden" [(ngModel)]="password"></ion-input>
+                </ion-item>
+                <button ion-button  full (click)="login()" color="danger">
+                        <img src="assets/images/svg-loaders/oval.svg" *ngIf="isLoading" />
+                        <span *ngIf="!isLoading">ENTRAR</span>
+                    </button>
+        </ion-list>
+       
+        <div class="">
+            <a href="#" target="_blank">Ainda não sou cliente.</a>
+            <a href="#" target="_blank">Esqueci login/senha</a>
+        </div>
     </div>
 </ion-content>
